@@ -64,7 +64,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         onCreate(sqLiteDatabase);
-
     }
 
     //CRUD Persons
@@ -90,13 +89,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
     }
 
-//    public int updateProductQty(ProductSqlLiteModel p) {
-//        SQLiteDatabase db = this.getWritableDatabase();
-//        ContentValues values = new ContentValues();
-//        values.put(KEY_QUNATITY, p.getQuantity());
-//        return db.update(TABLE_NAME, values, KEY_ID + " =?", new String[]{String.valueOf(p.getProduct_id())});
-//    }
-//
+    public int updateProductQty(ProductSqlLiteModel p) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(KEY_LICENSE_ID, p.getLicense_id());
+        values.put(KEY_VEHICAL_NUMBER, p.getVehical_no());
+        values.put(KEY_CATEGORY, p.getCategory());
+        values.put(KEY_KM_START, p.getKm_start());
+        values.put(KEY_KM_CLOSE, p.getKm_Close());
+        values.put(KEY_TIME_START, p.getTime_Start());
+        values.put(KEY_TIME_CLOSE, p.getTime_Close());
+        values.put(KEY_EXTRA_HRS, p.getExtra_hrs());
+        values.put(KEY_EXTRA_KMS, p.getExtra_Kms());
+        values.put(KEY_OUT_STATION, p.getOut_station());
+        values.put(KEY_ONE_WAY, p.getOne_Way());
+        values.put(KEY_NO_HALT, p.getNo_Halt());
+        return db.update(TABLE_NAME, values, KEY_ID + " =?", new String[]{String.valueOf(p.getId())});
+    }
+
 //    public void deleteProduct(ProductSqlLiteModel p) {
 //        SQLiteDatabase db = this.getWritableDatabase();
 //        db.delete(TABLE_NAME, KEY_ID + " =?", new String[]{String.valueOf(p.getProduct_id())});
@@ -128,29 +138,35 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return m;
     }
 
-    /*public ArrayList<ProductSqlLiteModel> getAllProducts() {
+    public ArrayList<ProductSqlLiteModel> getAllProducts() {
         ArrayList<ProductSqlLiteModel> lstPersons = new ArrayList<>();
         String selectQuery = "SELECT * FROM " + TABLE_NAME;
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
         if (cursor.moveToFirst()) {
             do {
-                ProductSqlLiteModel p = new ProductSqlLiteModel();
-                p.setProduct_id(String.valueOf(cursor.getInt(0)));
-                p.setProduct_name(cursor.getString(1));
-                p.setMrp_price(cursor.getString(2));
-                p.setSale_price(cursor.getString(3));
-                p.setImage_url(cursor.getString(4));
-                p.setQuantity(cursor.getString(5));
-                p.setStock(cursor.getString(6));
-                p.setTotal(cursor.getString(7));
-                lstPersons.add(p);
+                ProductSqlLiteModel m = new ProductSqlLiteModel();
+                m.setId(cursor.getInt(0));
+                m.setLicense_id(cursor.getString(1));
+                m.setVehical_no(cursor.getString(2));
+                m.setCategory(cursor.getString(3));
+                m.setKm_start(cursor.getString(4));
+                m.setKm_Close(cursor.getString(5));
+                m.setKm_Run(cursor.getString(6));
+                m.setTime_Start(cursor.getString(7));
+                m.setTime_Close(cursor.getString(8));
+                m.setOut_station(cursor.getString(9));
+                m.setOne_Way(cursor.getString(10));
+                m.setNo_Halt(cursor.getString(11));
+                m.setExtra_Kms(cursor.getString(12));
+                m.setExtra_hrs(cursor.getString(13));
+                lstPersons.add(m);
             }
             while (cursor.moveToNext());
         }
         return lstPersons;
     }
-*/
+
     public long getProductCount() {
         SQLiteDatabase db = this.getReadableDatabase();
         long count = DatabaseUtils.queryNumEntries(db, TABLE_NAME);

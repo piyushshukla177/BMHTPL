@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.AppCompatTextView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.AppCompatTextView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@android:id/text1"
     style="@style/spinnerItemStyle"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:ellipsize="marquee"
-    android:singleLine="true"
-    android:textSize="@dimen/_12sdp"
-    tools:text="Spinner Text"
     android:background="@drawable/edittext_bg"
-    android:gravity="center_vertical"
-    android:textColor="#212121"
-    android:padding="@dimen/_10sdp"
     android:drawableRight="@drawable/ic_arrow_drop_down_black_level_list"
-    tools:ignore="RtlHardcoded" />
+    android:ellipsize="marquee"
+    android:padding="@dimen/_10sdp"
+    android:singleLine="true"
+    android:textAlignment="center"
+    android:gravity="center_horizontal"
+    android:textColor="#212121"
+    android:textSize="@dimen/_12sdp"
+    tools:ignore="RtlHardcoded"
+    tools:text="Spinner Text" />
