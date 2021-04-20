@@ -2,7 +2,10 @@ package com.service.bmhtpl;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.view.WindowManager;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -10,5 +13,28 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        init();
     }
+
+    void init() {
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        int SPLASH_TIME_OUT = 3000;
+        Handler h = new Handler();
+        h.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+//                String user_id = PrefsHelper.getString(MainActivity.this, "username");
+                Intent i = new Intent(MainActivity.this, HomePageActivity.class);
+                startActivity(i);
+                finish();
+//                else {
+//                    Intent i = new Intent(MainActivity.this, LoginActivity.class);
+//                    startActivity(i);
+//                    finish();
+//                }
+            }
+        }, SPLASH_TIME_OUT);
+    }
+
 }

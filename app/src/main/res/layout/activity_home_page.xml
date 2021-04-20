@@ -71,6 +71,7 @@
                 android:orientation="horizontal">
 
                 <EditText
+                    android:id="@+id/id_et"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.9"
@@ -113,6 +114,7 @@
                 android:orientation="horizontal">
 
                 <EditText
+                    android:id="@+id/vehical_no_et"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.9"
@@ -154,16 +156,6 @@
                 android:background="@drawable/edittext_bg"
                 android:orientation="horizontal">
 
-<!--                <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner-->
-<!--                    android:id="@+id/category_spinner"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:textSize="@dimen/_10sdp"-->
-<!--                    android:background="@null"-->
-<!--                    app:layout_constraintLeft_toLeftOf="parent"-->
-<!--                    app:layout_constraintRight_toRightOf="parent"-->
-<!--                    app:layout_constraintTop_toBottomOf="@+id/state_spinner" />-->
-
                 <androidx.appcompat.widget.AppCompatSpinner
                     android:id="@+id/category_spinner"
                     android:layout_width="0dp"
@@ -195,6 +187,7 @@
                 android:orientation="horizontal">
 
                 <EditText
+                    android:id="@+id/km_start_et"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.9"
@@ -238,6 +231,7 @@
                 android:orientation="horizontal">
 
                 <EditText
+                    android:id="@+id/km_close_et"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -280,6 +274,7 @@
                 android:orientation="horizontal">
 
                 <EditText
+                    android:id="@+id/km_run_et"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -310,6 +305,7 @@
                 android:orientation="horizontal">
 
                 <EditText
+                    android:id="@+id/time_start_et"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -319,19 +315,6 @@
                     android:singleLine="true"
                     android:textAlignment="center"
                     android:textSize="@dimen/_10sdp" />
-
-                <!--                <RelativeLayout-->
-                <!--                    android:layout_width="0dp"-->
-                <!--                    android:layout_height="match_parent"-->
-                <!--                    android:layout_weight="0.1"-->
-                <!--                    android:background="@drawable/right_corner_round">-->
-
-                <!--                    <ImageView-->
-                <!--                        android:layout_width="@dimen/_15sdp"-->
-                <!--                        android:layout_height="@dimen/_15sdp"-->
-                <!--                        android:layout_centerInParent="true"-->
-                <!--                        android:src="@drawable/aaaaaaaa" />-->
-                <!--                </RelativeLayout>-->
 
             </LinearLayout>
 
@@ -353,6 +336,7 @@
                 android:orientation="horizontal">
 
                 <EditText
+                    android:id="@+id/time_close_et"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -363,21 +347,7 @@
                     android:textAlignment="center"
                     android:textSize="@dimen/_10sdp" />
 
-                <!--                <RelativeLayout-->
-                <!--                    android:layout_width="0dp"-->
-                <!--                    android:layout_height="match_parent"-->
-                <!--                    android:layout_weight="0.1"-->
-                <!--                    android:background="@drawable/right_corner_round">-->
-
-                <!--                    <ImageView-->
-                <!--                        android:layout_width="@dimen/_15sdp"-->
-                <!--                        android:layout_height="@dimen/_15sdp"-->
-                <!--                        android:layout_centerInParent="true"-->
-                <!--                        android:src="@drawable/aaaaaaaa" />-->
-                <!--                </RelativeLayout>-->
-
             </LinearLayout>
-
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -385,6 +355,7 @@
                 android:orientation="horizontal">
 
                 <CheckBox
+                    android:id="@+id/out_station_checkbox"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
@@ -393,6 +364,7 @@
                     android:textSize="@dimen/_10sdp" />
 
                 <CheckBox
+                    android:id="@+id/one_way_checkbox"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
@@ -403,13 +375,13 @@
 
             </LinearLayout>
 
-
             <CheckBox
+                android:id="@+id/no_halt_checkbox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="@dimen/_10sdp"
-                android:text="Ni Halt"
+                android:text="No Halt"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_10sdp" />
 
@@ -431,6 +403,7 @@
                 android:orientation="horizontal">
 
                 <EditText
+                    android:id="@+id/extra_kms_et"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -440,19 +413,6 @@
                     android:singleLine="true"
                     android:textAlignment="center"
                     android:textSize="@dimen/_10sdp" />
-
-                <!--                <RelativeLayout-->
-                <!--                    android:layout_width="0dp"-->
-                <!--                    android:layout_height="match_parent"-->
-                <!--                    android:layout_weight="0.1"-->
-                <!--                    android:background="@drawable/right_corner_round">-->
-
-                <!--                    <ImageView-->
-                <!--                        android:layout_width="@dimen/_15sdp"-->
-                <!--                        android:layout_height="@dimen/_15sdp"-->
-                <!--                        android:layout_centerInParent="true"-->
-                <!--                        android:src="@drawable/aaaaaaaa" />-->
-                <!--                </RelativeLayout>-->
 
             </LinearLayout>
 
@@ -474,6 +434,7 @@
                 android:orientation="horizontal">
 
                 <EditText
+                    android:id="@+id/extra_hrs_et"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -482,19 +443,6 @@
                     android:inputType="number"
                     android:singleLine="true"
                     android:textAlignment="center" />
-
-                <!--                <RelativeLayout-->
-                <!--                    android:layout_width="0dp"-->
-                <!--                    android:layout_height="match_parent"-->
-                <!--                    android:layout_weight="0.1"-->
-                <!--                    android:background="@drawable/right_corner_round">-->
-
-                <!--                    <ImageView-->
-                <!--                        android:layout_width="@dimen/_15sdp"-->
-                <!--                        android:layout_height="@dimen/_15sdp"-->
-                <!--                        android:layout_centerInParent="true"-->
-                <!--                        android:src="@drawable/aaaaaaaa" />-->
-                <!--                </RelativeLayout>-->
 
             </LinearLayout>
 
@@ -508,6 +456,7 @@
                 android:orientation="horizontal">
 
                 <Button
+                    android:id="@+id/save_record_et"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/_40sdp"
                     android:layout_weight="0.5"
@@ -518,6 +467,7 @@
                     app:backgroundTint="@null" />
 
                 <Button
+                    android:id="@+id/print_record_btn"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/_40sdp"
                     android:layout_marginLeft="@dimen/_20sdp"
@@ -530,6 +480,4 @@
             </LinearLayout>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
-
 </RelativeLayout>
-
