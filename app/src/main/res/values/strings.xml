@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">BMHTPL</string>
+    <string name="file_provider" translatable="false">com.kroegerama.imgpicker.demo.fileprovider</string>
+
+    <string name="pick_single">Please select your image</string>
+
 </resources>

@@ -24,6 +24,8 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.kroegerama.imgpicker.BottomSheetImagePicker;
+import com.kroegerama.imgpicker.ButtonType;
 import com.service.bmhtpl.util.DatabaseClient;
 import com.service.bmhtpl.util.InvoiceDb;
 import com.service.bmhtpl.util.InvoiceTable;
@@ -32,10 +34,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Executors;
 
-import gun0912.tedbottompicker.TedBottomPicker;
-import gun0912.tedbottompicker.TedBottomSheetDialogFragment;
-
-public class HomePageActivity extends AppCompatActivity {
+public class HomePageActivity extends AppCompatActivity implements BottomSheetImagePicker.OnImagesSelectedListener {
 
     Context context;
     ArrayList district_list = new ArrayList();
@@ -47,6 +46,8 @@ public class HomePageActivity extends AppCompatActivity {
     RelativeLayout km_start_relative, km_close_relative;
     ImageView km_start_imageview, km_close_imageview;
     Uri uri1, uri2;
+
+    String image_type = "none";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -142,15 +143,16 @@ public class HomePageActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         if (checkPermissions()) {
-                            TedBottomPicker.with(HomePageActivity.this)
-                                    .show(new TedBottomSheetDialogFragment.OnImageSelectedListener() {
-                                        @Override
-                                        public void onImageSelected(Uri uri) {
-                                            uri1 = uri;
-//                                            imageFile1 = new File(uri.getPath());
-                                            km_start_imageview.setImageURI(uri);
-                                        }
-                                    });
+                            image_type = "start";
+                            new BottomSheetImagePicker.Builder(getString(R.string.file_provider))
+                                    .cameraButton(ButtonType.Button)
+                                    .galleryButton(ButtonType.Button)
+                                    .singleSelectTitle(R.string.pick_single)
+                                    .peekHeight(R.dimen.peekHeight)
+                                    .columnSize(R.dimen.columnSize)
+                                    .requestTag("single")
+                                    .show(getSupportFragmentManager(), null);
+
                         }
 
                     }
@@ -161,17 +163,16 @@ public class HomePageActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         if (checkPermissions()) {
-                            TedBottomPicker.with(HomePageActivity.this)
-                                    .show(new TedBottomSheetDialogFragment.OnImageSelectedListener() {
-                                        @Override
-                                        public void onImageSelected(Uri uri) {
-                                            uri2 = uri;
-//                                          imageFile1 = new File(uri.getPath());
-                                            km_close_imageview.setImageURI(uri);
-//                                            clear_imageview1.setVisibility(View.VISIBLE);
-//                                            compressFile(imageFile1.getPath(), "img1");
-                                        }
-                                    });
+                            image_type = "close";
+                            new BottomSheetImagePicker.Builder(getString(R.string.file_provider))
+                                    .cameraButton(ButtonType.Button)
+                                    .galleryButton(ButtonType.Button)
+                                    .singleSelectTitle(R.string.pick_single)
+                                    .peekHeight(R.dimen.peekHeight)
+                                    .columnSize(R.dimen.columnSize)
+                                    .requestTag("single")
+                                    .show(getSupportFragmentManager(), null);
+
                         }
 
                     }
@@ -286,6 +287,20 @@ public class HomePageActivity extends AppCompatActivity {
             Toast.makeText(context, "Enter Time Close", Toast.LENGTH_SHORT).show();
         }
         return b;
+    }
+
+    @Override
+    public void onImagesSelected(List<? extends Uri> list, String s) {
+
+        for (Uri uri : list) {
+            if (image_type.equals("start")) {
+                km_start_imageview.setImageURI(uri);
+                uri1 = uri;
+            } else if (image_type.equals("close")) {
+                km_close_imageview.setImageURI(uri);
+                uri2 = uri;
+            }
+        }
     }
 
     private class SetAdditionalInfoDb extends AsyncTask<String, String, String> {
