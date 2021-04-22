@@ -23,9 +23,10 @@ public class InvoiceTable {
     private String Extra_hrs;
     private String km_start_image;
     private String km_close_image;
+    private String selected_radio;
 
     public InvoiceTable(int id,String license_id, String vehical_no, String category, String Km_start, String Km_Close, String Km_Run, String Time_Start, String Time_Close,
-                        String Out_station, String One_Way, String No_Halt, String Extra_Kms, String Extra_hrs,String km_start_image,String km_close_image) {
+                        String Out_station, String One_Way, String No_Halt, String Extra_Kms, String Extra_hrs,String km_start_image,String km_close_image,String selected_radio) {
         this.id = id;
         this.license_id = license_id;
         this.vehical_no = vehical_no;
@@ -42,6 +43,7 @@ public class InvoiceTable {
         this.Extra_hrs = Extra_hrs;
         this.km_start_image = km_start_image;
         this.km_close_image = km_close_image;
+        this.selected_radio =selected_radio;
     }
 
     public void setId(int id) {
@@ -110,5 +112,9 @@ public class InvoiceTable {
 
     public String getKm_close_image() {
         return km_close_image;
+    }
+
+    public String getSelected_radio() {
+        return selected_radio;
     }
 }

@@ -167,6 +167,39 @@
 
             </LinearLayout>
 
+
+            <RadioGroup
+                android:id="@+id/radiogroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radio_btn1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4/40"
+                    android:checked="true"
+                    android:textColor="@color/white" />
+
+                <RadioButton
+                    android:id="@+id/radio_btn2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:text="8/80"
+                    android:textColor="@color/white" />
+
+                <RadioButton
+                    android:id="@+id/radio_btn3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:text="12/120"
+                    android:textColor="@color/white" />
+            </RadioGroup>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"

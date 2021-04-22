@@ -21,6 +21,8 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -45,6 +47,8 @@ public class HomePageActivity extends AppCompatActivity implements BottomSheetIm
     static InvoiceDb db;
     RelativeLayout km_start_relative, km_close_relative;
     ImageView km_start_imageview, km_close_imageview;
+    RadioButton radio_btn1, radio_btn2, radio_btn3;
+    RadioGroup radiogroup;
     Uri uri1, uri2;
 
     String image_type = "none";
@@ -80,6 +84,10 @@ public class HomePageActivity extends AppCompatActivity implements BottomSheetIm
         km_close_relative = findViewById(R.id.km_close_relative);
         km_start_imageview = findViewById(R.id.km_start_imageview);
         km_close_imageview = findViewById(R.id.km_close_imageview);
+        radio_btn1 = findViewById(R.id.radio_btn1);
+        radio_btn2 = findViewById(R.id.radio_btn2);
+        radio_btn3 = findViewById(R.id.radio_btn3);
+        radiogroup = findViewById(R.id.radiogroup);
 
         category_spinner = findViewById(R.id.category_spinner);
 
@@ -152,9 +160,7 @@ public class HomePageActivity extends AppCompatActivity implements BottomSheetIm
                                     .columnSize(R.dimen.columnSize)
                                     .requestTag("single")
                                     .show(getSupportFragmentManager(), null);
-
                         }
-
                     }
                 }
         );
@@ -172,7 +178,6 @@ public class HomePageActivity extends AppCompatActivity implements BottomSheetIm
                                     .columnSize(R.dimen.columnSize)
                                     .requestTag("single")
                                     .show(getSupportFragmentManager(), null);
-
                         }
 
                     }
@@ -214,8 +219,7 @@ public class HomePageActivity extends AppCompatActivity implements BottomSheetIm
                     km_close_imageview.setImageURI(uri);
                 }
             });
-
-
+            radiogroup.check(Integer.parseInt(p.getSelected_radio()));
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -241,7 +245,6 @@ public class HomePageActivity extends AppCompatActivity implements BottomSheetIm
     boolean b = true;
 
     boolean check() {
-
         Executors.newSingleThreadExecutor().execute(new Runnable() {
             @Override
             public void run() {
@@ -251,7 +254,6 @@ public class HomePageActivity extends AppCompatActivity implements BottomSheetIm
                 }
             }
         });
-
         return b;
     }
 
@@ -330,10 +332,10 @@ public class HomePageActivity extends AppCompatActivity implements BottomSheetIm
             if (no_halt_checkbox.isChecked()) {
                 no_halt = "true";
             }
-
+            String selected_radio = String.valueOf(radiogroup.getCheckedRadioButtonId());
             db.ItemsDao().insert(new InvoiceTable(1, id_et.getText().toString(), vehical_no_et.getText().toString(), String.valueOf(category_spinner.getSelectedItemPosition()),
                     km_start_et.getText().toString(), km_close_et.getText().toString(), km_run_et.getText().toString(), time_start_et.getText().toString(),
-                    time_close_et.getText().toString(), out_station, one_way, no_halt, extra_kms_et.getText().toString(), extra_hrs_et.getText().toString(), km_start_image, km_close_image));
+                    time_close_et.getText().toString(), out_station, one_way, no_halt, extra_kms_et.getText().toString(), extra_hrs_et.getText().toString(), km_start_image, km_close_image, selected_radio));
             return "";
         }
 
@@ -379,9 +381,11 @@ public class HomePageActivity extends AppCompatActivity implements BottomSheetIm
             if (no_halt_checkbox.isChecked()) {
                 no_halt = "true";
             }
+            String selected_radio = String.valueOf(radiogroup.getCheckedRadioButtonId());
+
             db.ItemsDao().update(new InvoiceTable(1, id_et.getText().toString(), vehical_no_et.getText().toString(), String.valueOf(category_spinner.getSelectedItemPosition()),
                     km_start_et.getText().toString(), km_close_et.getText().toString(), km_run_et.getText().toString(), time_start_et.getText().toString(),
-                    time_close_et.getText().toString(), out_station, one_way, no_halt, extra_kms_et.getText().toString(), extra_hrs_et.getText().toString(), km_start_image, km_close_image));
+                    time_close_et.getText().toString(), out_station, one_way, no_halt, extra_kms_et.getText().toString(), extra_hrs_et.getText().toString(), km_start_image, km_close_image, selected_radio));
             return "";
         }
 
