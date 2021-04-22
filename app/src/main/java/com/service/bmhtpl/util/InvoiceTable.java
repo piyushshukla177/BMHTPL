@@ -21,9 +21,11 @@ public class InvoiceTable {
     private String No_Halt;
     private String Extra_Kms;
     private String Extra_hrs;
+    private String km_start_image;
+    private String km_close_image;
 
     public InvoiceTable(int id,String license_id, String vehical_no, String category, String Km_start, String Km_Close, String Km_Run, String Time_Start, String Time_Close,
-                        String Out_station, String One_Way, String No_Halt, String Extra_Kms, String Extra_hrs) {
+                        String Out_station, String One_Way, String No_Halt, String Extra_Kms, String Extra_hrs,String km_start_image,String km_close_image) {
         this.id = id;
         this.license_id = license_id;
         this.vehical_no = vehical_no;
@@ -38,6 +40,8 @@ public class InvoiceTable {
         this.No_Halt = No_Halt;
         this.Extra_Kms = Extra_Kms;
         this.Extra_hrs = Extra_hrs;
+        this.km_start_image = km_start_image;
+        this.km_close_image = km_close_image;
     }
 
     public void setId(int id) {
@@ -98,5 +102,13 @@ public class InvoiceTable {
 
     public String getExtra_hrs() {
         return Extra_hrs;
+    }
+
+    public String getKm_start_image() {
+        return km_start_image;
+    }
+
+    public String getKm_close_image() {
+        return km_close_image;
     }
 }

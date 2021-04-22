@@ -73,11 +73,11 @@
                 <EditText
                     android:id="@+id/id_et"
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                    android:layout_height="@dimen/_35sdp"
                     android:layout_weight="0.9"
                     android:background="@null"
-                    android:gravity="center_horizontal"
                     android:singleLine="true"
+                    android:text="12345678"
                     android:textAlignment="center"
                     android:textSize="@dimen/_10sdp" />
 
@@ -88,8 +88,8 @@
                     android:background="@drawable/right_corner_round">
 
                     <ImageView
-                        android:layout_width="@dimen/_15sdp"
-                        android:layout_height="@dimen/_15sdp"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
                         android:layout_centerInParent="true"
                         android:src="@drawable/licence_id" />
                 </RelativeLayout>
@@ -116,10 +116,9 @@
                 <EditText
                     android:id="@+id/vehical_no_et"
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                    android:layout_height="@dimen/_35sdp"
                     android:layout_weight="0.9"
                     android:background="@null"
-                    android:gravity="center_horizontal"
                     android:singleLine="true"
                     android:textAlignment="center"
                     android:textSize="@dimen/_10sdp" />
@@ -131,8 +130,8 @@
                     android:background="@drawable/right_corner_round">
 
                     <ImageView
-                        android:layout_width="@dimen/_15sdp"
-                        android:layout_height="@dimen/_15sdp"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
                         android:layout_centerInParent="true"
                         android:src="@drawable/car" />
                 </RelativeLayout>
@@ -162,7 +161,6 @@
                     android:layout_height="match_parent"
                     android:layout_weight="0.9"
                     android:background="@null"
-                    android:gravity="center_horizontal"
                     android:singleLine="true"
                     android:textAlignment="center"
                     android:textSize="@dimen/_10sdp" />
@@ -189,24 +187,25 @@
                 <EditText
                     android:id="@+id/km_start_et"
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                    android:layout_height="@dimen/_35sdp"
                     android:layout_weight="0.9"
                     android:background="@null"
-                    android:gravity="center_horizontal"
                     android:inputType="numberDecimal"
                     android:singleLine="true"
                     android:textAlignment="center"
                     android:textSize="@dimen/_10sdp" />
 
                 <RelativeLayout
+                    android:id="@+id/km_start_relative"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.1"
                     android:background="@drawable/right_corner_round">
 
                     <ImageView
-                        android:layout_width="@dimen/_15sdp"
-                        android:layout_height="@dimen/_15sdp"
+                        android:id="@+id/km_start_imageview"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
                         android:layout_centerInParent="true"
                         android:src="@drawable/camera" />
                 </RelativeLayout>
@@ -233,24 +232,25 @@
                 <EditText
                     android:id="@+id/km_close_et"
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                    android:layout_height="@dimen/_35sdp"
                     android:layout_weight="1"
                     android:background="@null"
-                    android:gravity="center_horizontal"
                     android:inputType="numberDecimal"
                     android:singleLine="true"
                     android:textAlignment="center"
                     android:textSize="@dimen/_10sdp" />
 
                 <RelativeLayout
+                    android:id="@+id/km_close_relative"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.1"
                     android:background="@drawable/right_corner_round">
 
                     <ImageView
-                        android:layout_width="@dimen/_15sdp"
-                        android:layout_height="@dimen/_15sdp"
+                        android:id="@+id/km_close_imageview"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
                         android:layout_centerInParent="true"
                         android:src="@drawable/camera" />
                 </RelativeLayout>
@@ -276,10 +276,9 @@
                 <EditText
                     android:id="@+id/km_run_et"
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                    android:layout_height="@dimen/_35sdp"
                     android:layout_weight="1"
                     android:background="@null"
-                    android:gravity="center_horizontal"
                     android:inputType="numberDecimal"
                     android:singleLine="true"
                     android:textAlignment="center"
@@ -307,10 +306,9 @@
                 <EditText
                     android:id="@+id/time_start_et"
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                    android:layout_height="@dimen/_35sdp"
                     android:layout_weight="1"
                     android:background="@null"
-                    android:gravity="center_horizontal"
                     android:inputType="numberDecimal"
                     android:singleLine="true"
                     android:textAlignment="center"
@@ -338,10 +336,9 @@
                 <EditText
                     android:id="@+id/time_close_et"
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                    android:layout_height="@dimen/_35sdp"
                     android:layout_weight="1"
                     android:background="@null"
-                    android:gravity="center_horizontal"
                     android:inputType="numberDecimal"
                     android:singleLine="true"
                     android:textAlignment="center"
@@ -405,10 +402,9 @@
                 <EditText
                     android:id="@+id/extra_kms_et"
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                    android:layout_height="@dimen/_35sdp"
                     android:layout_weight="1"
                     android:background="@null"
-                    android:gravity="center_horizontal"
                     android:inputType="numberDecimal"
                     android:singleLine="true"
                     android:textAlignment="center"
@@ -436,10 +432,9 @@
                 <EditText
                     android:id="@+id/extra_hrs_et"
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                    android:layout_height="@dimen/_35sdp"
                     android:layout_weight="1"
                     android:background="@null"
-                    android:gravity="center_horizontal"
                     android:inputType="numberDecimal"
                     android:singleLine="true"
                     android:textAlignment="center" />
