@@ -49,8 +49,8 @@ public class HomePageActivity extends AppCompatActivity implements BottomSheetIm
     ImageView km_start_imageview, km_close_imageview;
     RadioButton radio_btn1, radio_btn2, radio_btn3;
     RadioGroup radiogroup;
+    Button browse_start_image_btn,browse_close_image_btn;
     Uri uri1, uri2;
-
     String image_type = "none";
 
     @Override
@@ -80,8 +80,8 @@ public class HomePageActivity extends AppCompatActivity implements BottomSheetIm
         no_halt_checkbox = findViewById(R.id.no_halt_checkbox);
         save_record_et = findViewById(R.id.save_record_et);
         print_record_btn = findViewById(R.id.print_record_btn);
-        km_start_relative = findViewById(R.id.km_start_relative);
-        km_close_relative = findViewById(R.id.km_close_relative);
+        browse_start_image_btn = findViewById(R.id.browse_start_image_btn);
+        browse_close_image_btn = findViewById(R.id.browse_close_image_btn);
         km_start_imageview = findViewById(R.id.km_start_imageview);
         km_close_imageview = findViewById(R.id.km_close_imageview);
         radio_btn1 = findViewById(R.id.radio_btn1);
@@ -146,7 +146,7 @@ public class HomePageActivity extends AppCompatActivity implements BottomSheetIm
         });
         checkPermissions();
 
-        km_start_relative.setOnClickListener(
+        browse_start_image_btn.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -164,7 +164,7 @@ public class HomePageActivity extends AppCompatActivity implements BottomSheetIm
                     }
                 }
         );
-        km_close_relative.setOnClickListener(
+        browse_close_image_btn.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -179,7 +179,6 @@ public class HomePageActivity extends AppCompatActivity implements BottomSheetIm
                                     .requestTag("single")
                                     .show(getSupportFragmentManager(), null);
                         }
-
                     }
                 }
         );

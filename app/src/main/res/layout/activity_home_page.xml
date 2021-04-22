@@ -167,7 +167,6 @@
 
             </LinearLayout>
 
-
             <RadioGroup
                 android:id="@+id/radiogroup"
                 android:layout_width="match_parent"
@@ -179,8 +178,8 @@
                     android:id="@+id/radio_btn1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="4/40"
                     android:checked="true"
+                    android:text="4/40"
                     android:textColor="@color/white" />
 
                 <RadioButton
@@ -221,27 +220,56 @@
                     android:id="@+id/km_start_et"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/_35sdp"
-                    android:layout_weight="0.9"
+                    android:layout_weight="1"
                     android:background="@null"
                     android:inputType="numberDecimal"
                     android:singleLine="true"
                     android:textAlignment="center"
                     android:textSize="@dimen/_10sdp" />
 
-                <RelativeLayout
-                    android:id="@+id/km_start_relative"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.1"
-                    android:background="@drawable/right_corner_round">
+                <!--                <RelativeLayout-->
+                <!--                    android:id="@+id/km_start_relative"-->
+                <!--                    android:layout_width="0dp"-->
+                <!--                    android:layout_height="match_parent"-->
+                <!--                    android:layout_weight="0.1"-->
+                <!--                    android:background="@drawable/right_corner_round">-->
 
-                    <ImageView
-                        android:id="@+id/km_start_imageview"
-                        android:layout_width="@dimen/_20sdp"
-                        android:layout_height="@dimen/_20sdp"
-                        android:layout_centerInParent="true"
-                        android:src="@drawable/camera" />
-                </RelativeLayout>
+                <!--                    <ImageView-->
+                <!--                        android:id="@+id/km_start_imageview"-->
+                <!--                        android:layout_width="@dimen/_20sdp"-->
+                <!--                        android:layout_height="@dimen/_20sdp"-->
+                <!--                        android:layout_centerInParent="true"-->
+                <!--                        android:src="@drawable/camera" />-->
+                <!--                </RelativeLayout>-->
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/browse_start_image_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_gravity="center"
+                    android:textColor="@color/black"
+                    android:textAllCaps="false"
+                    android:textSize="@dimen/_10sdp"
+                    android:background="@drawable/edittext_bg"
+                    app:backgroundTint="@null"
+                    android:text="Browse Image" />
+
+                <ImageView
+                    android:id="@+id/km_start_imageview"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_70sdp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:src="@drawable/camera" />
 
             </LinearLayout>
 
@@ -273,21 +301,49 @@
                     android:textAlignment="center"
                     android:textSize="@dimen/_10sdp" />
 
-                <RelativeLayout
-                    android:id="@+id/km_close_relative"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.1"
-                    android:background="@drawable/right_corner_round">
+<!--                <RelativeLayout-->
+<!--                    android:id="@+id/km_close_relative"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_weight="0.1"-->
+<!--                    android:background="@drawable/right_corner_round">-->
 
-                    <ImageView
-                        android:id="@+id/km_close_imageview"
-                        android:layout_width="@dimen/_20sdp"
-                        android:layout_height="@dimen/_20sdp"
-                        android:layout_centerInParent="true"
-                        android:src="@drawable/camera" />
-                </RelativeLayout>
+<!--                    <ImageView-->
+<!--                        android:id="@+id/km_close_imageview"-->
+<!--                        android:layout_width="@dimen/_20sdp"-->
+<!--                        android:layout_height="@dimen/_20sdp"-->
+<!--                        android:layout_centerInParent="true"-->
+<!--                        android:src="@drawable/camera" />-->
+<!--                </RelativeLayout>-->
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/browse_close_image_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_gravity="center"
+                    android:textColor="@color/black"
+                    android:background="@drawable/edittext_bg"
+                    app:backgroundTint="@null"
+                    android:textSize="@dimen/_10sdp"
+                    android:text="Browse Image" />
+
+                <ImageView
+                    android:id="@+id/km_close_imageview"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_70sdp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:src="@drawable/camera" />
+
+            </LinearLayout>
+
 
             <TextView
                 android:layout_width="wrap_content"
